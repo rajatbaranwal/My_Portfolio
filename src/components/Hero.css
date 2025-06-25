@@ -1,0 +1,78 @@
+.hero-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, var(--bg-dark), var(--bg-darker));
+  text-align: center;
+  padding: 20px;
+}
+
+
+.hero-avatar {
+  
+  background-color: #0f172a; /* 👈 matches your Hero bg */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* soft blur */
+  
+}
+.hero-avatar {
+  /* ... previous styles ... */
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 12px #3b82f6;
+  }
+  50% {
+    box-shadow: 0 0 20px #2563eb;
+  }
+  100% {
+    box-shadow: 0 0 12px #3b82f6;
+  }
+}
+
+.hero-avatar {
+  mix-blend-mode: screen; /* or multiply/darken */
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.hero-title .highlight {
+  color: var(--primary-blue);
+}
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: var(--accent-blue); /* optional: or keep --text-light */
+  min-height: 30px; /* 👈 prevents layout jump during typing */
+  margin-bottom: 2rem;
+}
+
+
+.hero-button {
+  padding: 12px 24px;
+  background-color: var(--primary-blue);
+  color: white;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+}
+
+.hero-button:hover {
+  background-color: var(--hover-blue);
+  color: white; /* 👈 explicitly ensure text stays white */
+}
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}

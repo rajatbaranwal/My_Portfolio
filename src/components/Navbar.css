@@ -1,0 +1,13 @@
+/* Show desktop links on wider screens */
+@media (min-width: 768px) {
+    .nav-links-desktop {
+      display: flex !important;
+    }
+    .hamburger-button {
+      display: none !important;
+    }
+    .nav-links-mobile {
+      display: none !important;
+    }
+  }
+  
