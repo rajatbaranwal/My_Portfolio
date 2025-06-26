@@ -4,10 +4,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom right, var(--bg-dark), var(--bg-darker));
+
+  background-color: var(--bg-dark); 
+  
   text-align: center;
   padding: 20px;
 }
+
 
 
 .hero-avatar {
@@ -33,12 +36,12 @@
   }
 }
 
-.hero-avatar {
+/* .hero-avatar {
   mix-blend-mode: screen; /* or multiply/darken */
-}
+} */
 
 .hero-title {
-  font-size: 3rem;
+  font-size: 20rem;
   font-weight: bold;
   color: white;
   margin-bottom: 1rem;
@@ -75,4 +78,23 @@
   justify-content: center;
   gap: 16px;
   margin-top: 20px;
+}
+.gradient-name {
+  background: linear-gradient(90deg, #3b82f6, #9333ea, #f43f5e, #3b82f6);
+  background-size: 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: textGlow 4s linear infinite;
+  font-weight: bold;
+}
+
+@keyframes textGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
 }

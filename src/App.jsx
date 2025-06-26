@@ -6,17 +6,32 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Skills from './components/Skills';
 import ScrollTop from './components/ScrollTop';
+import Loading from './components/Loading';
+import { useState, useEffect } from 'react';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Set timeout for loader duration (e.g., 3.8s)
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3800); // Ensure at least 1 quote change
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return <Loading />;
+
   return (
     <div>
       <Navbar />
       <Hero />
-      <Projects />
       <About />
+      <Projects />
       <Skills />
       <Contact />
-      <ScrollTop /> 
+      <ScrollTop />
     </div>
   );
 }

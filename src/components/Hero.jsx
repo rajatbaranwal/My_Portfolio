@@ -12,7 +12,7 @@ const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        Hi, I'm <span className="highlight">Rajat</span>
+        Hi, I'm <span className="gradient-name">Rajat</span>
       </motion.h1>
 
       

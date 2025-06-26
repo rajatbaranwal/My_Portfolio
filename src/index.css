@@ -1,9 +1,8 @@
 :root {
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
-  background-color: #0f172a;
-  color: white;
 
+  /* 🎯 Dark Theme (Default) */
   --primary-blue: #3b82f6;
   --hover-blue: #2563eb;
   --accent-blue: #60a5fa;
@@ -12,6 +11,20 @@
   --text-light: #cbd5e1;
 }
 
+/* 🌤 Light Blue Theme (when toggled via .light-theme class) */
+body.light-theme {
+  --primary-blue: #3b82f6;
+  --hover-blue: #2563eb;
+  --accent-blue: #2563eb;
+
+  --bg-dark: #e0f2ff;       /* Soft light blue */
+  --bg-darker: #cfe6f8;     /* Slightly darker for sections */
+  --text-light: #0f172a;    /* Darker text */
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+/* Reset & Base styles */
 * {
   margin: 0;
   padding: 0;
@@ -19,14 +32,14 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
   min-height: 100vh;
-  background-color: var(--bg-dark);
-  color: white;
+  background-color: var(--bg-dark);   /* Adjusts with theme */
+  color: var(--text-light);           /* Adjusts with theme */
   font-family: 'Poppins', sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
+/* Anchor tag styling */
 a {
   color: var(--primary-blue);
   text-decoration: none;
@@ -37,7 +50,30 @@ a:hover {
   color: var(--hover-blue);
 }
 
+/* Image default */
 img {
   max-width: 100%;
   display: block;
+}
+
+/* 🔷 Glassmorphism Box */
+.glass-box {
+  background: rgba(255, 255, 255, 0.05);      /* For dark theme */
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  transition: background 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 800px;
+}
+
+/* Optional: Light mode glass box variant */
+body.light-theme .glass-box {
+  background: rgba(255, 255, 255, 0.35);      /* Lighter glass */
+  border: 1px solid rgba(0, 0, 0, 0.1);        /* Softer border */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
