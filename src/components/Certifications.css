@@ -1,0 +1,97 @@
+.certifications-container {
+    background-color: var(--bg-dark);
+    padding: 60px 20px;
+    text-align: center;
+    color: var(--text-light);
+  }
+  
+  .certifications-heading {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 2rem;
+  }
+  
+  .certifications-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  /* Same card style as projects */
+  .cert-card.simple {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 30px 20px;
+    width: 260px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    z-index: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+    transform-style: preserve-3d;
+  }
+  
+  /* Animated gradient border */
+  .cert-card.simple::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    background: linear-gradient(45deg, #3b82f6, #9333ea, #f43f5e, #3b82f6);
+    background-size: 400% 400%;
+    border-radius: 18px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    filter: blur(8px);
+  }
+  
+  .cert-card.simple:hover::before {
+    opacity: 1;
+    animation: borderGlow 4s linear infinite;
+  }
+  
+  @keyframes borderGlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 400% 50%; }
+  }
+  
+  .cert-card.simple:hover {
+    transform: scale(1.08) translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Text transitions */
+  .cert-card.simple h3,
+  .cert-card.simple p {
+    transition: color 0.3s ease;
+  }
+  
+  .cert-card.simple:hover h3 {
+    color: white;
+  }
+  
+  .cert-card.simple:hover p {
+    color: #e2e8f0;
+  }
+  
+  .cert-card.simple h3 {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+    color: var(--accent-blue);
+  }
+  
+  .cert-card.simple p {
+    font-size: 0.85rem;
+    color: #cbd5e1;
+  }
+  

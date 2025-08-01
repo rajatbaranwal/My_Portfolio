@@ -7,6 +7,7 @@ import Contact from './components/Contact';
 import Skills from './components/Skills';
 import ScrollTop from './components/ScrollTop';
 import Loading from './components/Loading';
+import Certifications from "./components/Certifications";
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <About />
       <Projects />
       <Skills />
+      <Certifications />
       <Contact />
       <ScrollTop />
     </div>
